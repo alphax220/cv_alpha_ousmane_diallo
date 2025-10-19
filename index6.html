@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alpha Ousmane Diallo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 30px;
+        }
+        .personal-details {
+            flex: 1;
+        }
+        .photo-container {
+            width: 140px;
+            height: 140px;
+            border: 3px solid #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .photo-placeholder {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.75em;
+            padding: 10px;
+            line-height: 1.4;
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 2.2em;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            font-size: 1.4em;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .skill-item {
+            background: #e8f4fc;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+            font-weight: 500;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 8px 0;
+            font-size: 0.9em;
+        }
+        .languages {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .language-item {
+            background: #e8f4fc;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            font-weight: 500;
+        }
+        .language-item strong {
+            color: #2c3e50;
+        }
+        .projects {
+            margin: 15px 0;
+        }
+        .project-item {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .project-item:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .interest-item {
+            background: #e8f4fc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #3498db;
+            font-weight: 500;
+        }
+        .company {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .profile-title {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        /* Styles pour l'impression */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .container {
+                box-shadow: none !important;
+                padding: 15px !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+            .photo-container {
+                border: 2px solid #3498db !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .photo-container {
+                margin: 0 auto 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="personal-details">
+                <h1>Alpha Ousmane Diallo</h1>
+                <div class="profile-title">Développeur Jeux Vidéo & Web</div>
+                <div class="contact-info">
+                    <strong>📧 Email:</strong> fhonx4@gmail.com<br>
+                    <strong>📞 Téléphone:</strong> +221-7708-86-29<br>
+                    <strong>📍 Adresse:</strong> HANN-MARISTES 2-R150
+                </div>
+            </div>
+            <div class="photo-container">
+                <!-- INSTRUCTIONS POUR AJOUTER VOTRE PHOTO -->
+                <img src="alpha_w-Photoroom.jpg" alt="Photo Alpha Ousmane Diallo">
+               
+                
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Profil</h2>
+            <p>Je suis passionné de code, technologie, et de jeux vidéos et j'aime apprendre de nouvelles choses et expérimenter.</p>
+        </div>
+
+        <div class="section">
+            <h2>Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Game-Design</div>
+                <div class="skill-item">PLAYTEST-DEBUG</div>
+                <div class="skill-item">Godot Engine</div>
+                <div class="skill-item">Marketing</div>
+                <div class="skill-item">Lua</div>
+                <div class="skill-item">GDSCRIPT</div>
+                <div class="skill-item">C#</div>
+                <div class="skill-item">HTML-CSS-PHP</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Expérience Professionnelle</h2>
+            <div class="experience-item">
+                <strong>👨‍💻 LEAD PROGRAMMER GODOT ENGINE</strong><br>
+                <span class="date">2023 - 2024</span><br>
+                <span class="company">TERANGA GAME STUDIO GAMEHUB SENEGAL</span>
+                <div class="projects">
+                    <div class="project-item">Développement du jeu Teranga Quest</div>
+                    <div class="project-item">Développement du jeu cax version 2</div>
+                    <div class="project-item">Développement du jeu yeti-pizza-run</div>
+                    <div class="project-item">Développement de 2 jeux 2D sous android (Caxlanga-Cafsule)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Formation</h2>
+            <div class="education-item">
+                <strong>🎓 Development Niveau Intermédiaire en Cours</strong><br>
+                <span class="date">oct. 2025 - nov. 2025</span><br>
+                D-CLIC, Paris
+            </div>
+            <div class="education-item">
+                <strong>🌐 Development Web Débutant</strong><br>
+                <span class="date">août 2025 - sept. 2025</span><br>
+                D-CLIC, Paris
+                <div class="projects">
+                    <div class="project-item">Acquérir une connaissance approfondie de l'historique du web et des protocoles associés</div>
+                    <div class="project-item">Comprendre les différentes techniques de développement web</div>
+                    <div class="project-item">Comprendre l'importance de préserver l'environnement dans le contexte numérique</div>
+                    <div class="project-item">Maîtriser les bases du langage HTML5 et être capable de créer une structure de base d'une page web</div>
+                    <div class="project-item">Utiliser les techniques de mise en forme avec CSS3</div>
+                    <div class="project-item">Intégrer et utiliser le code JavaScript pour des fonctionnalités interactives</div>
+                </div>
+            </div>
+            <div class="education-item">
+                <strong>📚 Diplôme Supérieur de technologie</strong><br>
+                <span class="date">2021 - 2023</span><br>
+                Industries chimiques et Agro-alimentaires
+            </div>
+            <div class="education-item">
+                <strong>📝 BAC+2</strong><br>
+                <span class="date">2012 - 2014</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Langues</h2>
+            <div class="languages">
+                <div class="language-item"><strong>Français</strong></div>
+                <div class="language-item">Anglais</div>
+                <div class="language-item">Wolof</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="education-item">
+                <strong>🏆 Udemy Experience CERTIFICATION</strong>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Centres d'intérêt</h2>
+            <div class="interests">
+                <div class="interest-item">💻 Code</div>
+                <div class="interest-item">🔧 Technologie</div>
+                <div class="interest-item">🎮 Jeux vidéos</div>
+                <div class="interest-item">📖 Apprendre de nouvelles choses</div>
+                <div class="interest-item">🔬 Expérimenter</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boutons pour différentes méthodes de génération PDF -->
+    <div style="position: fixed; top: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">
+        <button onclick="printPDF()" style="padding: 12px 20px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            🖨️ Imprimer (PDF)
+        </button>
+        <button onclick="downloadWithHtml2Pdf()" style="padding: 12px 20px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            📄 Télécharger PDF
+        </button>
+        <button onclick="showInstructions()" style="padding: 12px 20px; background: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            ❓ Aide
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        // Méthode 1: Impression navigateur (La plus fiable)
+        function printPDF() {
+            window.print();
+        }
+
+        // Méthode 2: html2pdf.js (Alternative)
+        function downloadWithHtml2Pdf() {
+            const element = document.querySelector('.container');
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'CV_Alpha_Ousmane_Diallo.pdf',
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    scrollX: 0,
+                    scrollY: 0
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '⏳ Génération...';
+            button.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            }).catch(error => {
+                console.error('Erreur html2pdf:', error);
+                button.innerHTML = '❌ Erreur';
+                button.disabled = false;
+                alert('Erreur avec html2pdf. Utilisez la méthode d\'impression du navigateur.');
+            });
+        }
+
+        // Méthode 3: Instructions
+        function showInstructions() {
+            alert(`MÉTHODES POUR GÉNÉRER LE PDF :
+
+1️⃣ **MÉTHODE RECOMMANDÉE** :
+   - Cliquez sur "🖨️ Imprimer (PDF)"
+   - Dans la fenêtre d'impression, choisissez "Enregistrer au format PDF"
+   - ✅ Résultat garanti
+
+2️⃣ **METHODE ALTERNATIVE** :
+   - Cliquez sur "📄 Télécharger PDF"
+   - Si ça ne marche pas, utilisez la méthode 1
+
+3️⃣ **METHODE MANUELLE** :
+   - Ctrl+P (Windows) ou Cmd+P (Mac)
+   - Destination : "Enregistrer au format PDF"
+   - Imprimer
+
+📝 **ASTUCE** : La méthode d'impression du navigateur est toujours la plus fiable !`);
+        }
+
+        // Améliorer l'impression
+        window.addEventListener('beforeprint', function() {
+            // Ajouter une classe pour cacher les boutons lors de l'impression
+            document.querySelectorAll('button').forEach(btn => {
+                btn.classList.add('no-print');
+            });
+        });
+    </script>
+</body>
+</html>
